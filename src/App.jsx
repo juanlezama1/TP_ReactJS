@@ -10,7 +10,7 @@ function App() {
   return (
     <body class="container-fluid">
       <Navbar />
-      <ItemListContainer />
+      <ItemListContainer student="JUAN PABLO LEZAMA" subject="REACT JS" />
     </body>
   )
 }
