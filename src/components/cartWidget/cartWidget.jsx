@@ -9,13 +9,13 @@ const CartWidget = () => {
 
   <Space size="middle">
     <Badge count={5}>
-      <Avatar shape="none" size="large" icon={<ShoppingCartOutlined />} />
+        <a href="#">
+            <Avatar className="header_navbar_item" size="large" icon={<ShoppingCartOutlined />} />
+        </a>
     </Badge>
-    
   </Space>
 );
 
-        // <a className="header_navbar_item" href="./pages/about_us.html">CARRITO DE COMPRAS</a>
 }
 
 export default CartWidget

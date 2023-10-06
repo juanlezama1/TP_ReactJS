@@ -9,7 +9,7 @@ const Navbar = () => {
     <a classNameName="header_image_link" href="index.html"><img className="header_image rounded" src="../public/images/navbar-image.png" alt="logo_gamershop"/></a> 
     <nav className="header_navbar">
         <ul className="header_navbar_list">
-            <li><a className="header_navbar_item" href="./pages/about_us.html">LOG IN</a></li>
+            <li><a className="header_navbar_item" href="#">LOG IN</a></li>
             <li><CartWidget /></li>
         </ul>
     </nav>
