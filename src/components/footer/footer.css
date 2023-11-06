@@ -1,0 +1,175 @@
+/* ESTILOS EN FOOTER */
+.footer {
+    background-image: linear-gradient(to right, rgb(30, 31, 30), rgb(46, 58, 70));
+    padding-bottom: 25px;
+    height: 180px;
+  }
+  @media (max-width: 991px) {
+    .footer {
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .footer_div_image {
+      display: none !important;
+    }
+  }
+  
+  .footer_div_info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .footer_div_followus {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .footer_div_dondeestamos {
+    display: flex;
+    flex-direction: row;
+    margin-top: 7px;
+    padding: 0;
+    height: 100%;
+    color: white;
+  }
+  @media (max-width: 991px) {
+    .footer_div_dondeestamos {
+      flex-direction: column;
+    }
+  }
+  
+  .footer_div_dondeestamos_info {
+    width: 50%;
+  }
+  @media (max-width: 991px) {
+    .footer_div_dondeestamos_info {
+      width: 100%;
+    }
+  }
+  
+  .footer_title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .footer_title_rrss {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: white;
+  }
+  
+  .footer_infogeneral {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px;
+    width: 100%;
+    color: white;
+  }
+  
+  .footer_followus_image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .footer_infogeneral_info, .footer_dondeestamos_info {
+    list-style: none;
+    font-family: "Rubik", sans-serif;
+  }
+  
+  .footer_map {
+    height: 100%;
+    width: 50%;
+    padding-left: 2px;
+    padding-right: 5%;
+    border-radius: 4%;
+  }
+  @media (max-width: 991px) {
+    .footer_map {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  
+  .footer_rrss {
+    width: 100%;
+    height: 121px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  @media (max-width: 991px) {
+    .footer_rrss {
+      height: 50px;
+    }
+  }
+  
+  .footer_rrss_link {
+    height: 50%;
+    margin-left: 15px;
+  }
+  
+  .footer_rrss_image {
+    height: 50%;
+  }
+  @media (max-width: 991px) {
+    .footer_rrss_image {
+      height: 75%;
+    }
+  }
+  
+  .footer_rrss_image:hover {
+    display: inline-block;
+    transform: scale(1.5);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .rights {
+    background-image: linear-gradient(to right, rgb(30, 31, 30), rgb(46, 58, 70));
+  }
+  
+  .rights_text {
+    font-size: 13px;
+    font-style: italic;
+    color: grey;
+  }
+  
+  .whatsapp_button {
+    width: 60px;
+    height: 60px;
+    bottom: 17px;
+    right: 17px;
+    position: fixed;
+  }
+  
+  .whatsapp_image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 100%;
+    animation-name: movimiento_logo_whatsapp;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-duration: 3s;
+  }
+  
+  @keyframes movimiento_logo_whatsapp {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

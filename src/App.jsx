@@ -1,17 +1,27 @@
-import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import './App.css'
 import Navbar from './components/Navbar/navbar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import ItemListContainer from './components/itemListContainer/itemListContainer';
+import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
+import ListCategories from './components/listCategories/listCategories';
+import NotFound from './components/notFound/notFound';
+import Footer from './components/footer/footer';
 
 function App() {
 
   return (
-    <body class="container-fluid">
+
+    <BrowserRouter>
       <Navbar />
-      <ItemListContainer student="JUAN PABLO LEZAMA" subject="REACT JS" />
-    </body>
+      <Routes>
+        <Route exact path = "/" element = {<ItemListContainer />}/>
+        <Route exact path = "/category/:category_id" element = {<ItemListContainer />}/>
+        <Route exact path = "/item/:game_id" element = {<ItemDetailContainer />}/>
+        <Route exact path = "/category" element = {<ListCategories />} />
+        <Route exact path = "*" element = {<NotFound />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   )
 }
 
