@@ -1,14 +1,15 @@
 import { Card } from "antd"
 import { Meta } from "antd/es/list/Item"
 import { Link } from "react-router-dom"
+import './listSingleConsole.css'
 
 const ListSingleConsole = ({name, image, developer}) => {
 
     return (
-        <Link to={'/'} className='Card col-3 text-center'>
-            <Card hoverable cover={<img className='category_image' alt="consolas" src='/public/images/game-genres.png' />}>
-                <Meta title="Juegos por género" description={`Acción, Aventura, RPG, Puzzle, etc.`} />
-                <p className='more_info text-decoration-underline'>Ver juegos!</p>
+        <Link to={'/'} className='Card col-3 text-center text-decoration-none'>
+            <Card hoverable cover={<img className='console_image' alt={name} src={`/public/images/${image}`} />}>
+                <Meta title={name} description={developer} />
+                <p className='more_info text-decoration-underline'>Ver juegos de {name}!</p>
             </Card>
         </Link>
     )

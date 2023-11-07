@@ -10,15 +10,15 @@ const ListCategories = () => {
 
       <div className='row m-4'>
 
-        <Link to={'/category/consoles'} className='Card col-6 text-center'>
-          <Card hoverable cover={<img className='category_image' alt="consolas" src='/public/images/consolas.webp' />}>
+        <Link to={'/category/consoles'} className='Card col-6 text-center text-decoration-none'>
+          <Card hoverable cover={<img className='category_image' alt="consolas" src='/public/images/consolas2.webp' />}>
           <Meta title="Juegos por consola" description={`PS4/PS5, Xbox One/Series, PC, etc.`} />
           <p className='more_info text-decoration-underline'>Ver juegos!</p>
           </Card>
         </Link>
 
 
-        <Link to={'/category/genres'} className='Card col-6 text-center'>
+        <Link to={'/category/genres'} className='Card col-6 text-center text-decoration-none'>
           <Card hoverable cover={<img className='category_image' alt="consolas" src='/public/images/game-genres.png' />}>
           <Meta title="Juegos por género" description={`Acción, Aventura, RPG, Puzzle, etc.`} />
           <p className='more_info text-decoration-underline'>Ver juegos!</p>
