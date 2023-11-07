@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 const GamesList = ({my_games}) => {
     
     return (
-      <div className='row'>
+      <div className='row m-1'>
             {my_games.map(game => (
             <Link className='col-3 text-center text-decoration-none' to={`/item/${game.id}`}>
-            <Card
+            <div className='Card'><Card
               key={game.id}
               hoverable
-              cover={<img alt={game.id} src={game.background_image} />}
+              cover={<img className='game_image' alt={game.id} src={game.background_image} />}
             >
               {game.metacritic == null ? (
                 <Meta title={game.name} description={`Puntaje Metacritic: (Sin Calificar)`} />
@@ -20,7 +20,7 @@ const GamesList = ({my_games}) => {
                 <Meta title={game.name} description={`Puntaje Metacritic: ${game.metacritic}/100`} />
               )}
               <p className='more_info text-decoration-underline'>Más Info/Comprar</p>
-            </Card>
+            </Card></div>
             </Link>
         ))}
       </div>

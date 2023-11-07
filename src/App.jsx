@@ -6,6 +6,9 @@ import ItemDetailContainer from './components/itemDetailContainer/itemDetailCont
 import ListCategories from './components/listCategories/listCategories';
 import NotFound from './components/notFound/notFound';
 import Footer from './components/footer/footer';
+import ListCategoryItems from './components/listCategoryItems/listCategoryItems'
+import UnderConstruction from './components/underConstruction/underConstruction';
+import './App.css'
 
 function App() {
 
@@ -15,9 +18,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path = "/" element = {<ItemListContainer />}/>
-        <Route exact path = "/category/:category_id" element = {<ItemListContainer />}/>
-        <Route exact path = "/item/:game_id" element = {<ItemDetailContainer />}/>
         <Route exact path = "/category" element = {<ListCategories />} />
+        <Route exact path = "/category/:category_type" element = {<ListCategoryItems />}/>
+        <Route exact path = "/item/:game_id" element = {<ItemDetailContainer />}/>
+        <Route exact path = "/construction" element={<UnderConstruction />} />
         <Route exact path = "*" element = {<NotFound />} />
       </Routes>
       <Footer />

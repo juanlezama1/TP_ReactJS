@@ -2,8 +2,6 @@ import './loadingSpinner.css'
 
 const LoadingSpinner = () => {
 
-    console.log("cargo un loading spinner")
-
     return (
         
         <>

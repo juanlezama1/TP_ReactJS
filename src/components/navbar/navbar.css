@@ -1,6 +1,6 @@
 /* ESTILOS EN HEADER */
 
-.header_menues {
+.header_menues { 
     height: 55px; 
     width: 100%;
     background-color: whitesmoke;
@@ -131,6 +131,9 @@
     color:green;
 }
 
+.no_underline {
+    text-decoration: none;
+}
 .header_dropdown {
 
     height: 100%;

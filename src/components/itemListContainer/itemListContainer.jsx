@@ -5,7 +5,7 @@ import { Button } from 'antd';
  
 const apiKey = '702be93892c341a5aa64499ef9026d16';
 const endpoint = '/games'
-const page_size = 16
+const page_size = 12
 let loading = true
 
 const ItemListContainer = () => {
@@ -31,10 +31,14 @@ const ItemListContainer = () => {
             (
                 <>
                 <GamesList my_games = {games_list} /> 
-                <Button onClick={() => {
-                    loading = true
-                    setPageNumber(page_number+1)
-                    }}>VER MÁS JUEGOS!</Button>
+                <div className='row m-4'>
+                    <div className='col-12 text-center m-4'>
+                        <Button onClick={() => {
+                            loading = true
+                            setPageNumber(page_number+1)
+                        }}><b>VER MÁS JUEGOS!</b></Button>
+                    </div>
+                </div>
                 </>
             ):  
                 <LoadingSpinner />

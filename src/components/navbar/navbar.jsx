@@ -21,7 +21,7 @@ const onSearch = (value, _e, info) => console.log(info?.source, value);
 const Navbar = () => {
     return (
     <>
-    <header className="row">
+    <header className="row navbar m-0 p-0">
     <div className="header_index col-12">
     <Link to={'/'}><img className="header_image rounded" src="/public/images/navbar-image.png" alt="logo_gamershop"/></Link>
     <nav className="header_navbar">
@@ -38,8 +38,8 @@ const Navbar = () => {
         </Space>
 
             <li><Link className="header_navbar_item" to={'/category'}>CATEGORÍAS</Link></li>
-            <li><a className="header_navbar_item" href="#">LOG IN</a></li>
-            <li><CartWidget /></li>
+            <li><Link className="header_navbar_item" to={'/construction'}>LOG IN</Link></li>
+            <li><Link to={'/construction'}><CartWidget /></Link></li>
         </ul>
     </nav>
     </div>

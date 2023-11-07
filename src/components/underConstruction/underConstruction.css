@@ -1,0 +1,9 @@
+.under_construction {
+
+    background-image: url('../../../public/images/under_construction.jpeg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 95vh;
+    overflow: hidden;
+
+}
