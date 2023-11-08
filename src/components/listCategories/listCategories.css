@@ -2,10 +2,10 @@
     margin-top: 18px;
 }
 
-.Card {
-    height: 350px;
+.category_image {
+    height: 320px;
 }
 
-.category_image {
-    height: 200px;
+.categories {
+    height: 500px;
 }

@@ -8,10 +8,19 @@ const endpoint = '/games'
 const page_size = 12
 let loading = true
 
-const ItemListContainer = () => {
+const ItemListContainer = ({searched_word, genre, platform}) => {
 
+    // (searched_word ||genre || platform) ? 
+    
+    // (
+    //     const [page_number, setPageNumber] = useState (1)
+    //     let API_URL = `https://api.rawg.io/api${endpoint}?key=${apiKey}&page=${page_number}&page_size=${page_size}`
+    // ) :
+
+    // (
     const [page_number, setPageNumber] = useState (Math.floor(Math.random() * 35) + 1)
     const [games_list, setGamesList] = useState ([]) 
+    // )
 
     let API_URL = `https://api.rawg.io/api${endpoint}?key=${apiKey}&page=${page_number}&page_size=${page_size}`
 
@@ -43,6 +52,12 @@ const ItemListContainer = () => {
             ):  
                 <LoadingSpinner />
         )
+}
+
+ItemListContainer.defaultProps = {
+    searched_word: '',
+    genre: '',
+    platform: ''
 }
 
 export default ItemListContainer
