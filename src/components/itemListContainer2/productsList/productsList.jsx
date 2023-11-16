@@ -8,7 +8,7 @@ const ProductsList = ({products}) => {
     return (
       <div className='row m-1'>
             {products.map(product => (
-            <Link className='col-3 text-center text-decoration-none' to={`/`}>
+            <Link className='col-3 text-center text-decoration-none' to={`/peripherals/item/${product.id}`}>
             <div className='Card'><Card
               key={product.id}
               hoverable
