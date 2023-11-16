@@ -1,7 +1,7 @@
 import './navbar.css'
 import { AudioOutlined } from '@ant-design/icons';
 import React from 'react';
-import { Input, Space } from 'antd';
+import { Badge, Input, Space } from 'antd';
 import { Link } from "react-router-dom";
 import CartWidget from './cartWidget/cartWidget';
 
@@ -29,7 +29,7 @@ const Navbar = () => {
 
         <Space direction="vertical">
             <Search
-            placeholder="Buscar productos..."
+            placeholder="Buscar juegos..."
             onSearch={onSearch}
             style={{
                 width: 200,
@@ -37,6 +37,7 @@ const Navbar = () => {
             />
         </Space>
 
+            <li><Link className="header_navbar_item" to={'/peripherals'}><Badge offset={[-37, -14]} count={"¡NUEVO!"}>PERIFÉRICOS</Badge></Link></li>
             <li><Link className="header_navbar_item" to={'/category'}>CATEGORÍAS</Link></li>
             <li><Link className="header_navbar_item" to={'/construction'}>LOG IN</Link></li>
             <li><Link to={'/construction'}><CartWidget /></Link></li>

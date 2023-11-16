@@ -2,14 +2,27 @@ import { useParams } from "react-router-dom"
 import NotFound from "../notFound/notFound"
 import ListConsoles from "../listCategories/listConsoles/listConsoles"
 import ListGenres from "../listCategories/listGenres/listGenres"
+import ListPeripherals from "../listCategories/listPeripherals/listPeripherals"
 
 const ListCategoryItems = () => {
 
     const {category_type} = useParams ()
 
-    return (
-        category_type == 'consoles'? <ListConsoles/>: category_type == 'genres'? <ListGenres />: <NotFound />
-    )
+    switch (category_type)
+
+    {
+        case "consoles":
+            return (<ListConsoles/>)
+
+        case "genres":
+            return (<ListGenres/>)
+
+        case "peripherals":
+            return (<ListPeripherals/>)
+        
+        default:
+            return (<NotFound />)
+    }
 }
 
 export default ListCategoryItems

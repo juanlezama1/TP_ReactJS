@@ -12,6 +12,7 @@
   "dependencies": {
     "antd": "^5.9.4",
     "bootstrap": "^5.2.3",
+    "firebase": "^10.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0"
