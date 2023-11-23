@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/Navbar/navbar'
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
 import ItemListContainer from './components/itemListContainer/itemListContainer';
 import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
@@ -13,6 +12,7 @@ import CartComponentContext from './components/context/cartContext';
 import Cart from './components/cart/cart';
 import ItemListContainer2 from './components/itemListContainer2/itemListContainer2';
 import PeripheralDetailContainer from './components/peripheralDetailContainer/peripheralDetailContainer';
+import Navbar from './components/navbar/navbar';
 
 function App() {
 
@@ -23,14 +23,19 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path = "/" element = {<ItemListContainer />}/>
+          <Route exact path = "/categories" element = {<ListCategories />} />
+          <Route exact path = "/categories/:category_type" element = {<ListCategoryItems />}/>
+
           <Route exact path = "/peripherals" element = {<ItemListContainer2 />} />
+          <Route exact path = "/peripherals/categories/:category_id" element = {<ItemListContainer2 />} />
           <Route exact path = "/peripherals/item/:item_id" element = {<PeripheralDetailContainer />}/>
-          <Route exact path = "/category" element = {<ListCategories />} />
-          <Route exact path = "/category/:category_type" element = {<ListCategoryItems />}/>
-          <Route exact path = "/item/:game_id" element = {<ItemDetailContainer />}/>
+          
+          <Route exact path = "/games/:category_type/:category_id" element = {<ItemListContainer />}/>
+          <Route exact path = "/games/item/:game_id" element = {<ItemDetailContainer />}/>
+  
           <Route exact path = "/construction" element={<UnderConstruction />} />
-          <Route exact path = "*" element = {<NotFound />} />
           <Route exact path = "/cart" element={<Cart />} />
+          <Route exact path = "*" element = {<NotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>

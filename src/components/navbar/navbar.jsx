@@ -16,8 +16,6 @@ const suffix = (
     />
   );
 
-const onSearch = (value, _e, info) => console.log(info?.source, value);
-
 const Navbar = () => {
     return (
     <>
@@ -30,7 +28,7 @@ const Navbar = () => {
         <Space direction="vertical">
             <Search
             placeholder="Buscar juegos..."
-            onSearch={onSearch}
+            onSearch={(value) => {console.log(value)}}
             style={{
                 width: 200,
             }}
@@ -38,7 +36,7 @@ const Navbar = () => {
         </Space>
 
             <li><Link className="header_navbar_item" to={'/peripherals'}><Badge offset={[-37, -14]} count={"¡NUEVO!"}>PERIFÉRICOS</Badge></Link></li>
-            <li><Link className="header_navbar_item" to={'/category'}>CATEGORÍAS</Link></li>
+            <li><Link className="header_navbar_item" to={'/categories'}>CATEGORÍAS</Link></li>
             <li><Link className="header_navbar_item" to={'/construction'}>LOG IN</Link></li>
             <li><Link to={'/construction'}><CartWidget /></Link></li>
         </ul>

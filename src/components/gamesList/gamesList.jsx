@@ -8,7 +8,7 @@ const GamesList = ({my_games}) => {
     return (
       <div className='row m-1'>
             {my_games.map(game => (
-            <Link className='col-3 text-center text-decoration-none' to={`/item/${game.id}`}>
+            <Link className='col-3 text-center text-decoration-none' to={`/games/item/${game.id}`}>
             <div className='Card'><Card
               key={game.id}
               hoverable

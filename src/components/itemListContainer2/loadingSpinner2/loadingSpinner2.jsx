@@ -1,30 +1,23 @@
 import './loadingSpinner2.css'
 
-const LoadingSpinner2 = () => {
+const LoadingSpinner2 = ({text}) => {
+    
+    let loading_text = []
+
+    for (let letter_index = 0; letter_index < text.length; letter_index++)
+
+    {
+        text[letter_index] == ' ' ? loading_text.push(<span>&nbsp;</span>): loading_text.push(<span>{text[letter_index]}</span>)
+    }
 
     return (
         
         <>
         <section className='loading_section'>
             <div className="loading loading01">
-                <span>C</span>
-                <span>A</span>
-                <span>R</span>
-                <span>G</span>
-                <span>A</span>
-                <span>N</span>
-                <span>D</span>
-                <span>O</span>
-                <span>&nbsp;</span>
-                <span>P</span>
-                <span>R</span>
-                <span>O</span>
-                <span>D</span>
-                <span>U</span>
-                <span>C</span>
-                <span>T</span>
-                <span>O</span>
-                <span>S</span>
+
+            {loading_text}
+            
             </div>
         </section>
 
