@@ -2,7 +2,7 @@ import './navbar.css'
 import { AudioOutlined } from '@ant-design/icons';
 import React from 'react';
 import { Badge, Input, Space } from 'antd';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import CartWidget from './cartWidget/cartWidget';
 
 const { Search } = Input;
@@ -28,7 +28,7 @@ const Navbar = () => {
         <Space direction="vertical">
             <Search
             placeholder="Buscar juegos..."
-            onSearch={(value) => {console.log(value)}}
+            // onSearch={<Navigate to="/games/search/gta" />}
             style={{
                 width: 200,
             }}

@@ -30,7 +30,7 @@ function App() {
           <Route exact path = "/peripherals/categories/:category_id" element = {<ItemListContainer2 />} />
           <Route exact path = "/peripherals/item/:item_id" element = {<PeripheralDetailContainer />}/>
           
-          <Route exact path = "/games/:category_type/:category_id" element = {<ItemListContainer />}/>
+          <Route exact path = "/games/:category_type/:category_keyword" element = {<ItemListContainer />}/>
           <Route exact path = "/games/item/:game_id" element = {<ItemDetailContainer />}/>
   
           <Route exact path = "/construction" element={<UnderConstruction />} />
