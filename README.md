@@ -15,3 +15,4 @@ Falta:
 - carrito/checkout
 - /games/genre/asejfsdjf (no devuelve página de error)
 - README.md en formato pedido
+- comentar, unificar y emprolijar el código
