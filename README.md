@@ -8,9 +8,10 @@ Juan Pablo Lezama
 
 Falta:
 
-- Buscador por nombre/palabra clave
-- Buscar por tipo de consola
-- Buscar por tipo de género
-- Log-in
-- Carrito
-- Checkout
+- borrar buscador
+- cargando shooters...
+- filtro por consola
+- cargando juegos ps5...
+- carrito/checkout
+- /games/genre/asejfsdjf (no devuelve página de error)
+- README.md en formato pedido
