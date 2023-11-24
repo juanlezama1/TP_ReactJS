@@ -22,6 +22,7 @@ const ItemListContainer = () => {
         // Si no están definidas las categorías, que muestre 12 juegos random
 
         if(!category_type && !category_keyword) {
+            setGamesList([])
             setAPI_URL(`https://api.rawg.io/api/games?key=${apiKey}&page_size=${page_size}&page=${page_number}`)
         }
 
@@ -37,15 +38,19 @@ const ItemListContainer = () => {
                     break;
 
                 case "platform":
+                    setGamesList([])
                     setAPI_URL(`https://api.rawg.io/api/games?key=${apiKey}&page_size=${page_size}&platforms=${category_keyword}`)
                     break;
 
                 case "genre":
+                    setGamesList([])
                     setAPI_URL(`https://api.rawg.io/api/games?key=${apiKey}&page_size=${page_size}&genres=${category_keyword}`)
                     break;
 
                 default:
+                    console.log("entro acaaa")
                     return <NotFound />
+                    break;
             }}}, [category_type, category_keyword])
     
     useEffect( () => {
@@ -59,7 +64,7 @@ const ItemListContainer = () => {
         .then (api_answer_json => {
             API_URL_NEXT = api_answer_json.next,
             setGamesList(games_list.concat(api_answer_json.results))
-            console.log(games_list)
+            console.log(api_answer_json)
         })
         .catch (api_error => console.log(`Error!: ${api_error}`))
         .finally (() => setLoading(false))
