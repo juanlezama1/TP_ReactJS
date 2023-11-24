@@ -1,22 +1,15 @@
 import './navbar.css'
-import { AudioOutlined } from '@ant-design/icons';
 import React from 'react';
 import { Badge, Input, Space } from 'antd';
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CartWidget from './cartWidget/cartWidget';
 
 const { Search } = Input;
 
-const suffix = (
-    <AudioOutlined
-      style={{
-        fontSize: 16,
-        color: '#1677ff',
-      }}
-    />
-  );
-
 const Navbar = () => {
+
+  const navigate = useNavigate ()
+
     return (
     <>
     <header className="row navbar m-0 p-0">
@@ -28,7 +21,7 @@ const Navbar = () => {
         <Space direction="vertical">
             <Search
             placeholder="Buscar juegos..."
-            // onSearch={<Navigate to="/games/search/gta" />}
+            onSearch={(value) => {navigate(`/games/search/${value}`)}}
             style={{
                 width: 200,
             }}

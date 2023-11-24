@@ -32,6 +32,7 @@ const ItemListContainer = () => {
 
             {
                 case "search":
+                    setGamesList([])
                     setAPI_URL(`https://api.rawg.io/api/games?key=${apiKey}&page_size=${page_size}&search=${category_keyword}`)
                     break;
 
@@ -45,9 +46,10 @@ const ItemListContainer = () => {
 
                 default:
                     return <NotFound />
-            }}}, [])
+            }}}, [category_type, category_keyword])
     
     useEffect( () => {
+
 
     if (API_URL)
 
@@ -57,6 +59,7 @@ const ItemListContainer = () => {
         .then (api_answer_json => {
             API_URL_NEXT = api_answer_json.next,
             setGamesList(games_list.concat(api_answer_json.results))
+            console.log(games_list)
         })
         .catch (api_error => console.log(`Error!: ${api_error}`))
         .finally (() => setLoading(false))
