@@ -3,10 +3,10 @@ import { Meta } from "antd/es/list/Item"
 import { Link } from "react-router-dom"
 import './listSingleConsole.css'
 
-const ListSingleConsole = ({name, image, developer}) => {
+const ListSingleConsole = ({name, image, developer, console_keyword}) => {
 
     return (
-        <Link to={'/'} className='Card col-3 text-center text-decoration-none'>
+        <Link to={`/games/platform/${console_keyword}`} className='Card col-3 text-center text-decoration-none'>
             <Card hoverable cover={<img className='console_image' alt={name} src={`/public/images/${image}`} />}>
                 <Meta title={name} description={developer} />
                 <p className='more_info text-decoration-underline'>Ver juegos de {name}!</p>

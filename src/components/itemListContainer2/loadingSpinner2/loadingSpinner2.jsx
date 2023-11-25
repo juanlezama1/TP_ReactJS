@@ -16,7 +16,7 @@ const LoadingSpinner2 = ({text}) => {
         <section className='loading_section'>
             <div className="loading loading01">
 
-            {loading_text}
+            {loading_text} 
             
             </div>
         </section>
@@ -39,3 +39,5 @@ const LoadingSpinner2 = ({text}) => {
   }
   
   export default LoadingSpinner2;
+
+  

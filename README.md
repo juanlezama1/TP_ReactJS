@@ -9,9 +9,6 @@ Juan Pablo Lezama
 Falta:
 
 - borrar buscador
-- cargando shooters...
-- filtro por consola
-- cargando juegos ps5...
 - carrito/checkout
 - /games/genre/asejfsdjf (no devuelve página de error)
 - README.md en formato pedido
