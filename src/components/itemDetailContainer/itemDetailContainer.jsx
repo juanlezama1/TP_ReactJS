@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom"
 import React, { useEffect, useState } from 'react'
-import { Descriptions } from 'antd'
+import { Descriptions, Space, Table, Tag } from 'antd'
 import { Image } from 'antd';
+import "./ItemDetailContainer.css"
 
 const apiKey = '702be93892c341a5aa64499ef9026d16';
 
@@ -21,7 +22,7 @@ const ItemDetailContainer = () => {
     
     }, [])
 
-    let titulo, imagen1, imagen2, fecha_lanzamiento, descripcion, puntaje_metacritic, desarrolladores, plataformas, genero
+    let titulo, imagen1, imagen2, fecha_lanzamiento, descripcion, puntaje_metacritic, desarrolladores, plataformas, genero, precios
 
     if (game) {
 
@@ -31,7 +32,16 @@ const ItemDetailContainer = () => {
         game.released ? fecha_lanzamiento = game.released : fecha_lanzamiento = '(Información no disponible)'
         game.metacritic ? puntaje_metacritic = `${game.metacritic}/100` : puntaje_metacritic = '(Información no disponible)'
         game.developers.length > 0? desarrolladores = game.developers.map(desarrollador => desarrollador.name).join(' - '): desarrolladores = '(Información no disponible)'
-        game.platforms.length > 0? plataformas = game.platforms.map(plataforma => plataforma.platform.name).join(' - ') : plataformas = '(Información no disponible)'
+        
+        game.platforms.length > 0? 
+        (
+          plataformas = game.platforms.map(plataforma => plataforma.platform.name).join(' - ')
+        )
+        
+        : 
+        (plataformas = '(Información no disponible)',
+        precios = '(Licencias no disponibles)')
+
         game.genres.length > 0? genero = game.genres.map(genero => genero.name).join(' - '): genero= '(Información no disponible)'
         game.description? descripcion = <div dangerouslySetInnerHTML={{__html: game.description}}></div> : descripcion = '(Información no disponible)'
     } else {
@@ -76,6 +86,92 @@ const ItemDetailContainer = () => {
         },
     ]
 
+
+    // precios = game.platforms.map(plataforma => <div>Versión {plataforma.platform.name}: &nbsp;${Math.floor(Math.floor(Math.random() * 6000) + 4000)}</div>)
+
+    const buying_columns = [
+      {
+        title: 'Nombre completo',
+        dataIndex: 'name',
+        key: 'name',
+      },
+
+      {
+        title: 'Plataforma',
+        dataIndex: 'platform',
+        key: 'platform',
+      },
+
+      {
+        title: 'Tipo de juego',
+        key: 'game_type',
+        dataIndex: 'game_type',
+        render: (_, { game_platforms }) => (
+          <>
+            {game_platforms.map((platform) => {
+              let digital_platforms = ('playstation5', 'xbox-series-x', 'pc', 'ios')
+              let color = digital_platforms.includes(platform) ? 'geekblue' : 'green';
+
+              return (
+                <Tag color={color} key={platform}>
+                  {platform.toUpperCase()}
+                </Tag>
+              );
+            })}
+          </>
+        ),
+      },
+
+      {
+        title: 'Precio',
+        dataIndex: 'price',
+        key: 'price',
+      },
+
+
+      {
+        title: 'Action',
+        key: 'action',
+        render: (_, record) => (
+          <Space size="middle">
+            <a>Invite {record.name}</a>
+            <a>Delete</a>
+          </Space>
+        ),
+      },
+    ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const buying_data = [
+      {
+        name: 'John Brown',
+        tags: ['nice', 'developer'],
+        game_platforms: ['pc', 'psp']
+      },
+      {
+        name: 'Jim Green',
+        tags: ['loser'],
+        game_platforms: ['pc', 'psp']
+      },
+      {
+        name: 'Joe Black',
+        tags: ['cool', 'teacher'],
+        game_platforms: ['pc', 'psp']
+      },
+    ];
+
     return (
 
     <>
@@ -84,9 +180,12 @@ const ItemDetailContainer = () => {
       <div>{imagen2}</div>
     </div>
     <Descriptions bordered items={items} />
+
+    <h1 className="texto_gamer">¡COMPRAR AHORA!</h1>
+
+    <Table columns={buying_columns} dataSource={buying_data} />
     </>
     
-    )
-}
-
+    )}
+    
 export default ItemDetailContainer
