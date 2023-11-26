@@ -5,7 +5,7 @@ export const CartContext = createContext()
 const CartComponentContext = ({children}) => {
 
 const [cart_qty, setCartQty] = useState (0)
-const [cart, setCart] = useState ([{title: 'lampara', qty: 3, price: 9000}])
+const [cart, setCart] = useState ([])
 
 // El objeto cart tiene que tener el primer key como 'buyer' y adentro se compone de otro objeto con name/phone/email
 // El segundo key son items donde está el arreglo de objetos agregados, evitar que se repitan. 
