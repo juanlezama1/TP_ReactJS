@@ -1,10 +1,111 @@
 import { useParams } from "react-router-dom"
 import React, { useEffect, useState } from 'react'
-import { Descriptions, Space, Table, Tag } from 'antd'
+import { Descriptions, Select, Space, Table, Tag } from 'antd'
 import { Image } from 'antd';
 import "./ItemDetailContainer.css"
 
 const apiKey = '702be93892c341a5aa64499ef9026d16';
+
+const buying_columns = [
+  {
+    title: 'Nombre completo',
+    dataIndex: 'name',
+  },
+
+  {
+    title: 'Plataforma',
+    dataIndex: 'platform',
+  },
+
+  {
+    title: 'Tipo de juego',
+    dataIndex: 'game_type',
+    render: (_, { game_platforms }) => (
+      <>
+        {game_platforms.map((platform) => {
+          let color
+          let soporte_juego
+          let digital_platforms = ['playstation5', 'xbox-series-x', 'pc', 'ios']
+          digital_platforms.includes(platform) ?
+          (color ='blue',
+          soporte_juego = 'JUEGO DIGITAL')
+          : 
+          (color = 'green',
+          soporte_juego = 'JUEGO FÍSICO')
+
+          return (
+            <Tag color={color} key={platform}>
+              {soporte_juego.toUpperCase()}
+            </Tag>
+          );
+        })}
+      </>
+    ),
+  },
+
+  {
+    title: 'Precio',
+    dataIndex: 'price',
+  },
+
+  {
+    title: 'Cantidad',
+    render: () => 
+
+      <Select
+      defaultValue= '1'
+      style={{
+        width: 70,
+        textAlign: "center",
+      }}
+      options={[
+        {
+          value: '1',
+          label: '1',
+        },
+
+        {
+          value: '2',
+          label: '2',
+        },
+
+        {
+          value: '3',
+          label: '3',
+        },
+      ]}
+      />
+      
+  },
+
+  {
+    title: 'Action',
+    render: (_, record) => (
+      <Space size="large">
+        <a>Añadir al carrito</a>
+        <a>Comprar YA!</a>
+      </Space>
+    ),
+  },
+];
+
+const buying_data = [
+  {
+    name: 'John Brown',
+    tags: ['nice', 'developer'],
+    game_platforms: ['pc', 'psp']
+  },
+  {
+    name: 'Jim Green',
+    tags: ['loser'],
+    game_platforms: ['xbox-series-x', 'wii']
+  },
+  {
+    name: 'Joe Black',
+    tags: ['cool', 'teacher'],
+    game_platforms: ['playstation5']
+  },
+];
 
 const ItemDetailContainer = () => {
 
@@ -22,7 +123,7 @@ const ItemDetailContainer = () => {
     
     }, [])
 
-    let titulo, imagen1, imagen2, fecha_lanzamiento, descripcion, puntaje_metacritic, desarrolladores, plataformas, genero, precios
+    let titulo, imagen1, imagen2, fecha_lanzamiento, descripcion, puntaje_metacritic, desarrolladores, plataformas, genero, buying_sector
 
     if (game) {
 
@@ -35,17 +136,20 @@ const ItemDetailContainer = () => {
         
         game.platforms.length > 0? 
         (
-          plataformas = game.platforms.map(plataforma => plataforma.platform.name).join(' - ')
+          plataformas = game.platforms.map(plataforma => plataforma.platform.name).join(' - '),
+          buying_sector = <>
+          <Table columns={buying_columns} dataSource={buying_data} pagination={false} />
+          </>
         )
         
         : 
-        (plataformas = '(Información no disponible)',
-        precios = '(Licencias no disponibles)')
+        (plataformas = '(Información no disponible)')
 
         game.genres.length > 0? genero = game.genres.map(genero => genero.name).join(' - '): genero= '(Información no disponible)'
         game.description? descripcion = <div dangerouslySetInnerHTML={{__html: game.description}}></div> : descripcion = '(Información no disponible)'
     } else {
-        titulo = genero = descripcion =  imagen1 = imagen2 = desarrolladores = plataformas = fecha_lanzamiento = puntaje_metacritic = <div className="spinner-border" role="status"></div>
+        titulo = genero = descripcion =  imagen1 = imagen2 = desarrolladores = plataformas = fecha_lanzamiento = puntaje_metacritic = <div className="spinner-border" role="status"></div>,
+        buying_sector = <div className="text-center"><div className="spinner-border" role="status"></div></div>
     }
 
     const items = [
@@ -89,88 +193,7 @@ const ItemDetailContainer = () => {
 
     // precios = game.platforms.map(plataforma => <div>Versión {plataforma.platform.name}: &nbsp;${Math.floor(Math.floor(Math.random() * 6000) + 4000)}</div>)
 
-    const buying_columns = [
-      {
-        title: 'Nombre completo',
-        dataIndex: 'name',
-        key: 'name',
-      },
 
-      {
-        title: 'Plataforma',
-        dataIndex: 'platform',
-        key: 'platform',
-      },
-
-      {
-        title: 'Tipo de juego',
-        key: 'game_type',
-        dataIndex: 'game_type',
-        render: (_, { game_platforms }) => (
-          <>
-            {game_platforms.map((platform) => {
-              let digital_platforms = ('playstation5', 'xbox-series-x', 'pc', 'ios')
-              let color = digital_platforms.includes(platform) ? 'geekblue' : 'green';
-
-              return (
-                <Tag color={color} key={platform}>
-                  {platform.toUpperCase()}
-                </Tag>
-              );
-            })}
-          </>
-        ),
-      },
-
-      {
-        title: 'Precio',
-        dataIndex: 'price',
-        key: 'price',
-      },
-
-
-      {
-        title: 'Action',
-        key: 'action',
-        render: (_, record) => (
-          <Space size="middle">
-            <a>Invite {record.name}</a>
-            <a>Delete</a>
-          </Space>
-        ),
-      },
-    ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    const buying_data = [
-      {
-        name: 'John Brown',
-        tags: ['nice', 'developer'],
-        game_platforms: ['pc', 'psp']
-      },
-      {
-        name: 'Jim Green',
-        tags: ['loser'],
-        game_platforms: ['pc', 'psp']
-      },
-      {
-        name: 'Joe Black',
-        tags: ['cool', 'teacher'],
-        game_platforms: ['pc', 'psp']
-      },
-    ];
 
     return (
 
@@ -183,9 +206,11 @@ const ItemDetailContainer = () => {
 
     <h1 className="texto_gamer">¡COMPRAR AHORA!</h1>
 
-    <Table columns={buying_columns} dataSource={buying_data} />
+    {buying_sector}
     </>
     
     )}
     
+
+
 export default ItemDetailContainer
