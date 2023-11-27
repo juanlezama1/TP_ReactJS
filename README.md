@@ -8,9 +8,15 @@ Juan Pablo Lezama
 
 Falta:
 
-- borrar la palabra escrita en buscador
-- carrito/checkout
-- poner las keys en los .map para que no tire error
-- /games/genre/asejfsdjf (no devuelve página de error)
-- README.md en formato pedido
-- comentar, unificar y emprolijar el código
+- Resumen en carrito
+- Formulario con validación en carrito
+- Crear orden en FB y mostrar en página el número de transacción.
+- Poner un PAGAR -> próximamente
+- Parte de compra en periféricos
+- Errores de keys que no están puestas
+- Emprolijar y documentar todo
+- Componetizar varias partes que están hardcodeadas
+- Armar el Readme.MD
+- Error cuando se seleccionan cantidades
+- Limpiar el buscador cuando se usa
+- Ver por qué no devuelve página de error en /games/genre/jsafñdjfldsjfd

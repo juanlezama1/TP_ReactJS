@@ -3,12 +3,17 @@ import { CartContext } from "../context/cartContext"
 
 const Cart = () => {
 
-    const {cart_qty, cart} = useContext(CartContext)
+    const {cart, cart_qty, setCart, setCartQty} = useContext(CartContext)
 
     return (
-        <p>Hola desde el Cart! Tu carrito se compone de: {cart.map(elemento => <li>Ítem: {elemento.title}Cantidad: {elemento.qty}Precio: {elemento.price}</li>)}</p>
+        <>
+            <div className="row">
+                <div className="col-12">
+                    <h1>Resumen del pedido:</h1>
+                </div>
+            </div>
+        </>
     )
-
 }
 
 export default Cart

@@ -31,7 +31,7 @@ const Navbar = () => {
             <li><Link className="header_navbar_item" to={'/peripherals'}><Badge offset={[-37, -14]} count={"¡NUEVO!"}>PERIFÉRICOS</Badge></Link></li>
             <li><Link className="header_navbar_item" to={'/categories'}>CATEGORÍAS</Link></li>
             <li><Link className="header_navbar_item" to={'/construction'}>LOG IN</Link></li>
-            <li><Link to={'/construction'}><CartWidget /></Link></li>
+            <li><Link to={'/cart'}><CartWidget /></Link></li>
         </ul>
     </nav>
     </div>
