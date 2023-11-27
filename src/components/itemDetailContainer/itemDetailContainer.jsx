@@ -16,12 +16,12 @@ const ItemDetailContainer = () => {
   const navigate = useNavigate ()
   const {setCartQty, setCart, cart_qty, cart} = useContext(CartContext)
 
-  const add_tocart = (game) => {
+  const add_tocart = (my_game) => {
 
-    if (game.quantity > 0)
+    if (my_game.quantity > 0)
 
     {
-      setCartQty(parseInt(cart_qty) + parseInt(game.quantity))
+      setCartQty(parseInt(cart_qty) + parseInt(my_game.quantity))
 
       let cart2 = cart
       let game_contained = false
@@ -29,17 +29,17 @@ const ItemDetailContainer = () => {
       for (let index = 0; index < cart2.length; index++)
 
       {
-        if (cart2[index].item_name === game.name)
+        if (cart2[index].item_name === my_game.name)
 
         {
-          cart2[index].item_quantity += parseInt(game.quantity),
+          cart2[index].item_quantity += parseInt(my_game.quantity),
           setCart(cart2)
           game_contained = true
           break
         }
       }
 
-      !game_contained && cart2.push({item_id: game_id, item_quantity: parseInt(game.quantity), item_price: game.price, item_name: game.name, item_type: "game"})
+      !game_contained && cart2.push({item_id: game_id, item_quantity: parseInt(my_game.quantity), item_price: my_game.price, item_image: game.background_image, item_name: my_game.name, item_type: "game"})
 
       setCart(cart2)
 
@@ -63,9 +63,9 @@ const ItemDetailContainer = () => {
     setTimeout(messageApi.destroy, 1500);
   };
   
-  const buy_confirm = (game) => {
+  const buy_confirm = (my_game) => {
 
-    if (game.quantity > 0)
+    if (my_game.quantity > 0)
 
     {
       messageApi.open({
@@ -74,8 +74,8 @@ const ItemDetailContainer = () => {
         duration: 0,
       });
 
-    setCartQty(game.quantity)
-    setCart({item_id: game_id, item_quantity: parseInt(game.quantity), item_price: game.price, item_name: game.name, item_type: "game"})
+    setCartQty(my_game.quantity)
+    setCart({item_id: game_id, item_quantity: parseInt(my_game.quantity), item_price: my_game.price, item_image: game.background_image, item_name: my_game.name, item_type: "game"})
     
     setTimeout(() => {navigate('/cart')}, 2000);
 
