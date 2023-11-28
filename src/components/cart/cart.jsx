@@ -1,9 +1,8 @@
 import { useContext } from "react"
 import { CartContext } from "../context/cartContext"
-import CartGames from "./cartGames/cartGames"
-import CartPeripherals from "./cartPeripherals/cartPeripherals"
 import CartEmpty from "./cartEmpty/cartEmpty"
 import CartTotal from "./cartTotal/cartTotal"
+import CartItems from "./cartItems/cartItems"
 import CartForm from "./cartForm/cartForm"
 
 const Cart = () => {
@@ -13,18 +12,21 @@ const Cart = () => {
     return (
 
         <>
-            <div className="row">
-                <div className="col-12">
-                    <h1 className="text-center">Resumen del pedido:</h1>
-                </div>
-            </div>
-
            {cart_qty > 0 ? (
+           
            <>
-            <CartGames />
-            <CartPeripherals />
-            <CartTotal />
-            <CartForm />
+            <div className="row">
+                <div className="col-6">
+                    <CartForm />
+                </div>
+
+                <div className="col-6">
+                    <CartItems />
+                </div>
+           </div>
+
+
+            {/* <CartTotal /> */}
             </>) : (<CartEmpty />)}
         
         </>

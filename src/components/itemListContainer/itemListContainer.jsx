@@ -180,7 +180,6 @@ const ItemListContainer = () => {
     if (API_URL)
 
     {
-        console.log(API_URL)
         fetch (API_URL)
         .then (api_answer => api_answer.json())
         .then (api_answer_json => {

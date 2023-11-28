@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'fuenteGamer';
+    src: url('./cartEmpty.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.texto_gamer {
+    font-family: 'fuenteGamer';
+    text-align: center;
+    font-size: 60px;
+}
+
+.background {
+    background-image: url('/public/images/mario-background2.jpg');
+}

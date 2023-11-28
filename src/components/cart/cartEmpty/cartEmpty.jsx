@@ -1,7 +1,18 @@
+import './cartEmpty.css'
+
 const CartEmpty = () => {
 
     return (
-        <div>Hola desde el empty cart</div>
+        <div className="row background">
+
+            <div className="col-7 text-center">
+                <img style={{height: '500px'}} src="/public/images/noproducts.png" alt="no_products" />
+            </div>
+
+            <h1 className="col-5 d-flex align-items-center texto_gamer">
+                NINGUN <br/>PRODUCTO <br/>SELECCIONADO!
+            </h1>
+        </div>
     )
 }
 

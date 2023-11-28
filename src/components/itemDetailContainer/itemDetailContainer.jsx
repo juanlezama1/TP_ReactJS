@@ -279,7 +279,8 @@ const ItemDetailContainer = () => {
     </div>
     <Descriptions bordered items={items} />
 
-    <h1 className="texto_gamer">¡COMPRAR AHORA!</h1>
+    <h1 className="prueba">¡OBTENLO YA!</h1>
+
     {buying_sector}
     </>
     
