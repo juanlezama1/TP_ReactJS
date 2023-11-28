@@ -1,50 +1,63 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './cartGames.css'
 import { Link } from 'react-router-dom';
+import { message } from 'antd';
+import { CartContext } from '../../../context/cartContext';
 
-const CartGames = ({cart_games}) => {
+const CartGames = () => {
 
-    const [games_tobuy, setGames_tobuy] = useState (cart_games)
+    const [messageApi3, contextHolder3] = message.useMessage();
+    const {cart, cart_qty, setCart, setCartQty} = useContext(CartContext)
 
-    return (
+    let games_cart = cart.filter((item) => item.item_type == "game")
 
-        <>
-            {games_tobuy.length > 0 && <h2 className="items_title text-center">Tus Videojuegos:</h2>}
+    console.log(cart)
 
-            {games_tobuy.map((game, game_index) => (
-                <div className='row game_item'>
-                    <div className="col-3 d-flex align-items-center">
-                        <img className='game_cart_image' src={game.game_image} alt="game_image" />
-                    </div>
+    if (games_cart.length > 0)
 
-                   <div className="col-8">
-                        <div className='d-flex flex-column align-items-start justify-content-between'>
-                            <h3 className='col-12'>{game.game_name}</h3>
-                            <p className='col-12'>$ {game.game_price} x {game.game_quantity}</p>
+    {
+        return (
+            <>
+                {contextHolder3}
+                <h2 className="items_title text-center">Tus Videojuegos:</h2>
+
+                {games_cart.map((game, game_index) => (
+                    <div className='row game_item'>
+                        <div className="col-3 d-flex align-items-center">
+                            <img className='game_cart_image' src={game.item_image} alt="game_image" />
                         </div>
-                    </div>
 
-                    <div className="col-1 d-flex align-items-center delete_game_icon_div">
-                        <img onClick={() => {
-                            let games_tubuy2 = [...games_tobuy]
-                            games_tubuy2.splice(game_index, 1)
-                            setGames_tobuy(games_tubuy2)}} className='delete_game_icon' src={'/public/images/delete_game_icon.png'} alt="delete_icon" />
-                    </div>
-                </div>))
-            }
-        </>
-    )
+                        <div className="col-8">
+                                <div className='d-flex flex-column align-items-start justify-content-between'>
+                                    <h3 className='col-12'>{game.item_name}</h3>
+                                    <p className='col-12'>$ {game.item_price} x {game.item_quantity}</p>
+                                </div>
+                        </div>
+
+                        <div className="col-1 d-flex align-items-center delete_game_icon_div">
+                            <Link><img onClick={() => {
+ 
+                                messageApi3.open({
+                                    type: 'success',
+                                    content: '¡Juego borrado del carrito!',
+                                })
+
+                                let new_cart_quantity = cart_qty - game.item_quantity
+                                let new_cart = cart.filter((game2) => game2.item_name != game.item_name)
+
+                                console.log('nuevo cart:')
+                                console.log(new_cart)
+
+                                setCartQty(new_cart_quantity)
+                                setCart(new_cart)
+
+                                }} className='delete_game_icon' src={'/public/images/delete_game_icon.png'} alt="delete_icon" /></Link>
+                        </div>
+                    </div>))
+                }
+            </> 
+        )
+    }
 }
 
 export default CartGames
-
-
-
-
-
-
-
-
-
-
-
