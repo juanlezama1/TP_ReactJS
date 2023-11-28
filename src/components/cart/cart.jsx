@@ -4,6 +4,7 @@ import CartEmpty from "./cartEmpty/cartEmpty"
 import CartTotal from "./cartTotal/cartTotal"
 import CartItems from "./cartItems/cartItems"
 import CartForm from "./cartForm/cartForm"
+import './cart.css'
 
 const Cart = () => {
 
@@ -15,7 +16,7 @@ const Cart = () => {
            {cart_qty > 0 ? (
            
            <>
-            <div className="row">
+            <div className="row my_cart">
                 <div className="col-6">
                     <CartForm />
                 </div>

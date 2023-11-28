@@ -2,3 +2,27 @@
     text-decoration: underline;
     margin-bottom: 25px;
 }
+
+.game_cart_image {
+    width: 100%;
+    height: 90px;
+}
+
+.game_item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 4px;
+    border-color: rgb(56, 50, 50);
+    border-width: 1px;
+    border-style: solid;
+}
+
+.delete_game_icon_div {
+    padding-right: 4px;
+    display: flex;
+    justify-content: right;
+}
+
+.delete_game_icon {
+    width: 30px;
+}

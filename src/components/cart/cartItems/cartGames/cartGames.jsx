@@ -9,9 +9,9 @@ const CartGames = ({cart_games}) => {
             {cart_games.length > 0 && <h2 className="items_title text-center">Tus Videojuegos:</h2>}
 
             {cart_games.map((game) => (
-                <div className='row'>
-                    <div className="col-3">
-                        <img src={game.game_image} style={{width: '100%'}} alt="game_image" />
+                <div className='row game_item'>
+                    <div className="col-3 d-flex align-items-center">
+                        <img className='game_cart_image' src={game.game_image} alt="game_image" />
                     </div>
 
                    <div className="col-8">
@@ -21,8 +21,8 @@ const CartGames = ({cart_games}) => {
                         </div>
                     </div>
 
-                    <div className="col-1">
-                        X
+                    <div className="col-1 d-flex align-items-center delete_game_icon_div">
+                        <img className='delete_game_icon' src={'/public/images/delete_game_icon.png'} alt="delete_icon" />
                     </div>
                 </div>))
             }
