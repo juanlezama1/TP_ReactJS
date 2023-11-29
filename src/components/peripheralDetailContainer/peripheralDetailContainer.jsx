@@ -66,7 +66,7 @@ const PeripheralDetailContainer = () => {
           </div>
           <Descriptions bordered items={items} />
 
-          {(item!= null && !loading) && <PeripheralBuy stock={item.stock}/>}
+          {(item!= null && !loading) && <PeripheralBuy id={item_id} stock={item.stock} image={item.image} title={item.title} price={item.price}/>}
         </>
     )
 }
