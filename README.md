@@ -1,4 +1,4 @@
-TP Coder House - Pre-Entrega
+TP Coder House - Entrga Final
 
 Curso: React JS
 
@@ -8,11 +8,9 @@ Juan Pablo Lezama
 
 Falta:
 
-- Resumen en carrito
-- Formulario con validación en carrito
+- Hacer el total en carrito
 - Crear orden en FB y mostrar en página el número de transacción.
 - Poner un PAGAR -> próximamente
-- Parte de compra en periféricos
 - Errores de keys que no están puestas
 - Emprolijar y documentar todo
 - Componetizar varias partes que están hardcodeadas
