@@ -23,12 +23,12 @@ const Cart = () => {
 
                 <div className="col-6">
                     <CartItems />
+                    <CartTotal />
                 </div>
            </div>
-
-
-            {/* <CartTotal /> */}
-            </>) : (<CartEmpty />)}
+        </>) 
+        
+        : (<CartEmpty />)}
         
         </>
     )
