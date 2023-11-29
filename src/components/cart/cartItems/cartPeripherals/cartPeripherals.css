@@ -1,0 +1,28 @@
+.items_title2 {
+    text-decoration: underline;
+    margin-bottom: 25px;
+}
+
+.peripheral_cart_image {
+    width: 100%;
+    height: 90px;
+}
+
+.peripheral_item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 4px;
+    border-color: rgb(56, 50, 50);
+    border-width: 1px;
+    border-style: solid;
+}
+
+.delete_peripheral_icon_div {
+    padding-right: 4px;
+    display: flex;
+    justify-content: right;
+}
+
+.delete_peripheral_icon {
+    width: 25px;
+}

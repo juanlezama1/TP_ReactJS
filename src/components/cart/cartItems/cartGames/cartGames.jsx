@@ -11,8 +11,6 @@ const CartGames = () => {
 
     let games_cart = cart.filter((item) => item.item_type == "game")
 
-    console.log(cart)
-
     if (games_cart.length > 0)
 
     {
@@ -44,9 +42,6 @@ const CartGames = () => {
 
                                 let new_cart_quantity = cart_qty - game.item_quantity
                                 let new_cart = cart.filter((game2) => game2.item_name != game.item_name)
-
-                                console.log('nuevo cart:')
-                                console.log(new_cart)
 
                                 setCartQty(new_cart_quantity)
                                 setCart(new_cart)
