@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import {db} from "../../firebase/client"
 import { doc, getDoc } from "firebase/firestore"
 import { Descriptions, Image } from "antd"
+import PeripheralBuy from "./peripheralBuy/peripheralBuy"
 
 const PeripheralDetailContainer = () => {
 
@@ -29,8 +30,8 @@ const PeripheralDetailContainer = () => {
 
     {
         title = item.title
-        stock = item.stock
-        price = item.price
+        stock = item.stock + ' unidades disponibles'
+        price = <b>$ {item.price} + IVA</b>
         description = item.description
         image = <div><Image preview={{mask: 'Click para ampliar imagen de producto'}} height={400} src={item.image} /></div>
     }
@@ -60,10 +61,12 @@ const PeripheralDetailContainer = () => {
 
     return (
         <>
-        <div className="d-flex justify-content-center">
-          <div>{image}</div>
-        </div>
-        <Descriptions bordered items={items} />
+          <div className="d-flex justify-content-center">
+            <div>{image}</div>
+          </div>
+          <Descriptions bordered items={items} />
+
+          {(item!= null && !loading) && <PeripheralBuy stock={item.stock}/>}
         </>
     )
 }

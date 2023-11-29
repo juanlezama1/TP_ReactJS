@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'fuente_perifericos';
+    src: url('./fuentePeripherals.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.buying_sector {
+    font-family: 'fuente_obtenlo';
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 18px;
+}
+
+.boton {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.buttons_sector {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.confirmation_button {
+    width: 200px;
+    margin-bottom: 4px;
+}
+
+.confirmation_sector {
+    margin-bottom: 15px;
+}
