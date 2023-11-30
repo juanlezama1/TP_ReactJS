@@ -34,10 +34,11 @@ const FinalDescription = ({order_id}) => {
                   </div>
 
                   <div className="col-12">
+                  <QRCode value={order_id.id} />
                       <p className='final_id'>Nº de transacción: {order_id.id}</p>
-                      <p>FECHA: </p>
-                      <p>HORA: </p>
-                      <QRCode value={order_id.id} />
+                      <p className='final_id'>FECHA: </p>
+                      <p className='final_id'>HORA: </p>
+
                   </div>
                 </div>
               </div>
