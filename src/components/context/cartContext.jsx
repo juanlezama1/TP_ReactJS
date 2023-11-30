@@ -6,7 +6,7 @@ const CartComponentContext = ({children}) => {
 
 const [cart_qty, setCartQty] = useState (0)
 const [cart, setCart] = useState ([])
-const [order, setOrder] = useState ({})
+const [order, setOrder] = useState (null)
  
     return (
         <CartContext.Provider value={{cart_qty, cart, order, setCartQty, setCart, setOrder}}>

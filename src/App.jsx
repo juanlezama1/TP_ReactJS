@@ -13,7 +13,7 @@ import Cart from './components/cart/cart';
 import ItemListContainer2 from './components/itemListContainer2/itemListContainer2';
 import PeripheralDetailContainer from './components/peripheralDetailContainer/peripheralDetailContainer';
 import Navbar from './components/navbar/navbar';
-import FinalValidation from './components/finalValidation/finalValidation';
+import Final_Result from './components/finalResult/finalResult';
 
 function App() {
 
@@ -35,7 +35,7 @@ function App() {
           <Route exact path = "/games/item/:game_id" element = {<ItemDetailContainer />}/>
   
           <Route exact path = "/cart" element={<Cart />} />
-          <Route exact path = "/order_confirmation" element = { <FinalValidation />} />
+          <Route exact path = "/order_confirmation" element = { <Final_Result />} />
 
           <Route exact path = "/construction" element={<UnderConstruction />} />
           <Route exact path = "*" element = {<NotFound />} />
