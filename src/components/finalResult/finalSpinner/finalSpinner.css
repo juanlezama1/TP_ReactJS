@@ -1,0 +1,16 @@
+.cloud-movement {
+    margin: 0;
+    overflow: hidden;
+    background: url('/public/images/mario-background2.jpg') repeat-x;
+    animation: desplazamiento 10s linear infinite
+}
+  
+@keyframes desplazamiento {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100% 0; /* Desplaza la imagen al 100% del ancho hacia la izquierda */
+    }
+}
+  
