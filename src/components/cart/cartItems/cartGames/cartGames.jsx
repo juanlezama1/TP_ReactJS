@@ -18,7 +18,7 @@ const CartGames = () => {
             <>
                 {contextHolder3}
                 <h2 className="items_title text-center">Tus Videojuegos:</h2>
-
+ 
                 {games_cart.map((game, game_index) => (
                     <div className='row game_item'>
                         <div className="col-3 d-flex align-items-center">
@@ -27,8 +27,8 @@ const CartGames = () => {
 
                         <div className="col-8">
                                 <div className='d-flex flex-column align-items-start justify-content-between'>
-                                    <h3 className='col-12'>{game.item_name}</h3>
-                                    <p className='col-12'>$ {game.item_price} x {game.item_quantity}</p>
+                                    <h3 className='game_title col-12'>{game.item_name}</h3>
+                                    <p className='col-12 price'>$ {game.item_price} x {game.item_quantity}</p>
                                 </div>
                         </div>
 

@@ -8,4 +8,17 @@
 
 .payment_methods_title {
     margin-top: 26px;
+    font-family: 'font_cart';
+}
+
+.input_form {
+    background-color: rgb(204, 209, 209);
+    font-weight: bold;
+}
+
+
+.prueba {
+    font-family: 'fuente_obtenlo';
+    text-align: center;
+    margin-top: 20px;
 }

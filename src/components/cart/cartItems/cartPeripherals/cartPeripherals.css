@@ -1,11 +1,12 @@
 .items_title2 {
     text-decoration: underline;
     margin-bottom: 25px;
+    font-family: "font_cart";
 }
 
 .peripheral_cart_image {
     width: 100%;
-    height: 90px;
+    height: 70px;
 }
 
 .peripheral_item {

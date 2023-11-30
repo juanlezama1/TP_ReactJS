@@ -22,7 +22,7 @@ const CartTotal = () => {
                 <h4>Imp. País (35%): $ {imp_pais.toFixed(2)}</h4>
                 <h4>Imp. Servicios Digitales (8%): $ {imp_servdigitales.toFixed(2)}</h4>
 
-                <h1 className="total">TOTAL: $ {total+iva+imp_pais+imp_servdigitales}</h1>
+                <h1 className="total text-center">TOTAL: $ {(total+iva+imp_pais+imp_servdigitales).toFixed(2)}</h1>
             </div>
         </>
     )

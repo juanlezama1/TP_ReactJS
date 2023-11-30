@@ -27,8 +27,8 @@ const CartPeripherals = () => {
 
                         <div className="col-8">
                                 <div className='d-flex flex-column align-items-start justify-content-between'>
-                                    <h3 className='col-12'>{peripheral.item_name}</h3>
-                                    <p className='col-12'>$ {peripheral.item_price} x {peripheral.item_quantity}</p>
+                                    <h3 className='col-12 game_title'>{peripheral.item_name}</h3>
+                                    <p className='col-12 price'>$ {peripheral.item_price} x {peripheral.item_quantity}</p>
                                 </div>
                         </div>
 
