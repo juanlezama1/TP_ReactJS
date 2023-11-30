@@ -18,9 +18,9 @@ const CartTotal = () => {
         <>
             <div className="total_sector">
                 <h2>Subtotal: $ {total.toFixed(2)}</h2>
-                <h3>IVA (21%): $ {iva.toFixed(2)}</h3>
-                <h3>Imp. País (35%): {imp_pais.toFixed(2)}</h3>
-                <h3>Imp. Servicios Digitales (8%): {imp_servdigitales.toFixed(2)}</h3>
+                <h4>IVA (21%): $ {iva.toFixed(2)}</h4>
+                <h4>Imp. País (35%): $ {imp_pais.toFixed(2)}</h4>
+                <h4>Imp. Servicios Digitales (8%): $ {imp_servdigitales.toFixed(2)}</h4>
 
                 <h1 className="total">TOTAL: $ {total+iva+imp_pais+imp_servdigitales}</h1>
             </div>
