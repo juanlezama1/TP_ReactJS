@@ -4,7 +4,6 @@ import { QRCode } from 'antd'
 const FinalDescription = ({order_id}) => {
 
   const fecha_hora = new Date ()
-
   const horas = fecha_hora.getHours()
   const minutos = fecha_hora.getMinutes()
   let am_pm
@@ -46,9 +45,9 @@ const FinalDescription = ({order_id}) => {
                       <QRCode value={"Número de Transacción: " + order_id.id} />
                     </div>
 
-                    <p className='final_id text-start'>Nº de transacción: {order_id.id}</p>
-                    <p className='final_id text-start'>Fecha:   </p>
-                    <p className='final_id text-start'>Hora: {horas}:{minutos} {am_pm} </p>
+                    <p className='final_id text-start'>Nº de transacción: <span className='valor_id'><b>{order_id.id}</b></span></p>
+                    <p className='final_id text-start'>Fecha: <b>{fecha_hora.toLocaleDateString()}</b> </p>
+                    <p className='final_id text-start'>Hora: <b>{horas}:{minutos} {am_pm}</b> </p>
                   </div>
                 </div>
               </div>
