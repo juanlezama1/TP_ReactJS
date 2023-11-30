@@ -4,6 +4,7 @@ import { CartContext } from '../context/cartContext'
 import { addDoc, collection, doc, getDoc } from "firebase/firestore"
 import { db } from '../../firebase/client'
 import FinalSpinner from './finalSpinner/finalSpinner'
+import FinalDescription from './finalDescription/finalDescription'
 
 let my_order_id
 
@@ -18,6 +19,7 @@ const Final_Result = () => {
         
         {
             console.error ("ORDEN NO CARGADA")
+            setLoading(false)
         }
 
         else
@@ -41,16 +43,8 @@ const Final_Result = () => {
 
     return (
 
-        <>
+<>
             {loading ? <FinalSpinner /> : <FinalDescription order_id={my_order_id} />}
-            
-            // {my_order_id.id == undefined}
-            // <div className='row'>
-            //     <div className="col-12">
-            //         <img src="/public/images/mario.png" alt="image_success" />
-            //         {my_order_id.id}
-            //     </div>
-            // </div>
         </>
     )
 }
