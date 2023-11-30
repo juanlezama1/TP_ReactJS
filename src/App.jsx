@@ -1,4 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+// IMPORTO COMPONENTES NECESARIO //
+
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
 import ItemListContainer from './components/itemListContainer/itemListContainer';
 import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
@@ -7,13 +8,17 @@ import NotFound from './components/notFound/notFound';
 import Footer from './components/footer/footer';
 import ListCategoryItems from './components/listCategoryItems/listCategoryItems'
 import UnderConstruction from './components/underConstruction/underConstruction';
-import './App.css'
 import CartComponentContext from './components/context/cartContext';
 import Cart from './components/cart/cart';
 import ItemListContainer2 from './components/itemListContainer2/itemListContainer2';
 import PeripheralDetailContainer from './components/peripheralDetailContainer/peripheralDetailContainer';
 import Navbar from './components/navbar/navbar';
 import Final_Result from './components/finalResult/finalResult';
+
+
+// IMPORTO ESTILOS
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
