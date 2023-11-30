@@ -6,13 +6,10 @@ const CartComponentContext = ({children}) => {
 
 const [cart_qty, setCartQty] = useState (0)
 const [cart, setCart] = useState ([])
-
-// El objeto cart tiene que tener el primer key como 'buyer' y adentro se compone de otro objeto con name/phone/email
-// El segundo key son items donde está el arreglo de objetos agregados, evitar que se repitan. 
-// El tercer ítem es el total monetario, asiq hay que ir recorriendo y multiplicando. 
-
+const [order, setOrder] = useState ({})
+ 
     return (
-        <CartContext.Provider value={{cart_qty, cart, setCartQty, setCart}}>
+        <CartContext.Provider value={{cart_qty, cart, order, setCartQty, setCart, setOrder}}>
             {children}
         </CartContext.Provider>
     )

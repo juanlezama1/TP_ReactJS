@@ -8,20 +8,10 @@ import {useNavigate} from 'react-router-dom'
 
 const CartForm = () => {
 
-    const [spinning, setSpinning] = useState(false)
-    const {cart, cart_qty, setCart, setCartQty} = useContext(CartContext)
+    const {cart, cart_qty, setCart, setCartQty, order, setOrder} = useContext(CartContext)
     const navigate = useNavigate ()
 
-    const showLoader = () => {
-        setSpinning(true);
-        setTimeout(() => {
-          setSpinning(false);
-        }, 3000);
-      };
-
     const onFinish = (values) => {
-
-        showLoader()
 
         let total2 = 0
         cart.forEach ((product) => {total2 += product.item_price*product.item_quantity})
@@ -30,23 +20,15 @@ const CartForm = () => {
             buyer: {name: values.buyer_name, phone: values.buyer_phone, email: values.buyer_email},
             items: cart,
             total: total2}
-    
-        const nueva_orden = collection (db, "buying_orders")
 
-        addDoc(nueva_orden, my_order)
-        .then ((order_id) => {
-            
-            setCartQty(0)
-            setCart([])
-            navigate(`/success/${order_id.id}`)})
+        setOrder(my_order)
 
-        .catch((error) => console.error(error))
-      };
+        navigate ('/order_confirmation')
+    }
 
     return (
 
         <>
-            <Spin spinning={true} fullscreen />
             <Form layout='vertical' name="basic" labelAlign="right" labelCol={{span: 16}} wrapperCol={{span: 16}} style={{maxWidth: 600}} initialValues={{remember: true}} onFinish={onFinish} autoComplete="off">
                 <Form.Item label="Nombre Completo" name="buyer_name" rules={[{required: true, message: 'Nombre completo requerido!'}]}>
                     <Input className="input_form" placeholder='Nombre y apellido'/>
