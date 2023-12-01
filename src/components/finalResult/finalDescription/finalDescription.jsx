@@ -18,7 +18,7 @@ const FinalDescription = ({order_id}) => {
         (
           <div className="row background">
             <div className="col-8 text-center">
-              <img style={{height: '500px'}} src="/public/images/mario_sad2.png" alt="no_order" />
+              <img style={{height: '500px'}} src="/public/images/backgrounds/mario_sad2.png" alt="no_order" />
             </div>
 
             <h1 className="col-4 d-flex align-items-center texto_gamer">
@@ -31,7 +31,7 @@ const FinalDescription = ({order_id}) => {
           <div>
             <div className="row background">
               <div className="col-5 text-center">
-                <img style={{height: '500px'}} src="/public/images/mario.png" alt="order_confirm" />
+                <img style={{height: '500px'}} src="/public/images/backgrounds/mario.png" alt="order_confirm" />
               </div>
 
               <div className="col-7 d-flex align-items-center justify-content-end texto_gamer">

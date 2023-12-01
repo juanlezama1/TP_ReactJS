@@ -46,7 +46,7 @@ const CartPeripherals = () => {
                                 setCartQty(new_cart_quantity)
                                 setCart(new_cart)
 
-                                }} className='delete_peripheral_icon' src={'/public/images/delete_game_icon.png'} alt="delete_icon" /></Link>
+                                }} className='delete_peripheral_icon' src={'/public/images/general_images/delete_game_icon.png'} alt="delete_icon" /></Link>
                         </div>
                     </div>))
                 }

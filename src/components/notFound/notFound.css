@@ -1,6 +1,6 @@
 .main_error {
 
-    background-image: url('../../../public/images/error_404.png');
+    background-image: url('../../../public/images/backgrounds/error_404.png');
     background-size:cover;
     background-repeat: no-repeat;
     height: 80vh;

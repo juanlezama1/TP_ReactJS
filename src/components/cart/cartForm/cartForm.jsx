@@ -46,15 +46,15 @@ const CartForm = () => {
 
                 <div className="row align-items-center">
                     <div className="col-4">
-                        <img style={{height: '50px'}} src='/public/images/mercado_pago.png'></img>
+                        <img style={{height: '50px'}} src='/public/images/payment_methods/mercado_pago.png'></img>
                     </div>
 
                     <div className="col-4">
-                        <img style={{height: '140px'}} src='/public/images/visa.png'></img>
+                        <img style={{height: '140px'}} src='/public/images/payment_methods/visa.png'></img>
                     </div>
 
                     <div className="col-4">
-                        <img style={{height: '80px'}} src='/public/images/mastercard.png'></img>
+                        <img style={{height: '80px'}} src='/public/images/payment_methods/mastercard.png'></img>
                     </div>
                 </div>
 

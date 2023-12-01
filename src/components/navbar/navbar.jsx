@@ -14,7 +14,7 @@ const Navbar = () => {
     <>
     <header className="row navbar m-0 p-0">
     <div className="header_index col-12">
-    <Link to={'/'}><img className="header_image rounded" src="/public/images/navbar-image.png" alt="logo_gamershop"/></Link>
+    <Link to={'/'}><img className="header_image rounded" src="/public/images/general_images/navbar-image.png" alt="logo_gamershop"/></Link>
     <nav className="header_navbar">
         <ul className="header_navbar_list">
 

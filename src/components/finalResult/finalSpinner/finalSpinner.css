@@ -1,7 +1,7 @@
 .cloud-movement {
     margin: 0;
     overflow: hidden;
-    background: url('/public/images/mario-background2.jpg') repeat-x;
+    background: url('/public/images/backgrounds/mario-background2.jpg') repeat-x;
     animation: desplazamiento 10s linear infinite
 }
   

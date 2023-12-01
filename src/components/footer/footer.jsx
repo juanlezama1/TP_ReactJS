@@ -14,7 +14,7 @@ const Footer = () => {
         <footer className="footer row">
 
             <div className="footer_div_image col-lg-2 d-flex flex-wrap align-items-center">
-                <img className = "footer_image img-fluid" src="/public/images/navbar-image.png" alt="logo_thegamershop"/>
+                <img className = "footer_image img-fluid" src="/public/images/general_images/navbar-image.png" alt="logo_thegamershop"/>
             </div>
 
             <Info />

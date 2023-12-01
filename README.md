@@ -8,9 +8,6 @@ Juan Pablo Lezama
 
 Falta:
 
-- Hacer el total en carrito
-- Crear orden en FB y mostrar en página el número de transacción.
-- Poner un PAGAR -> próximamente
 - Errores de keys que no están puestas
 - Emprolijar y documentar todo
 - Componetizar varias partes que están hardcodeadas
