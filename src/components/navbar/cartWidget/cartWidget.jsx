@@ -12,7 +12,7 @@ const CartWidget = () => {
   <Space size="middle">
     <Badge count={cart_qty} showZero>
         <a href="#">
-            <Avatar className="header_navbar_item" size="large" icon={<ShoppingCartOutlined />} />
+          <Avatar className="header_navbar_item" size="large" icon={<ShoppingCartOutlined />} />
         </a>
     </Badge>
   </Space>
