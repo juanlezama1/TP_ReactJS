@@ -1,4 +1,9 @@
+// Importo estilo
+
 import './underConstruction.css'
+
+
+// Componente UnderConstruction para páginas que aún están en construcción
 
 const UnderConstruction = () => {
 

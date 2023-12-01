@@ -7,7 +7,7 @@ const LoadingSpinner2 = ({text}) => {
     for (let letter_index = 0; letter_index < text.length; letter_index++)
 
     {
-        text[letter_index] == ' ' ? loading_text.push(<span>&nbsp;</span>): loading_text.push(<span>{text[letter_index]}</span>)
+        text[letter_index] == ' ' ? loading_text.push(<span key={letter_index}>&nbsp;</span>): loading_text.push(<span key={letter_index}>{text[letter_index]}</span>)
     }
 
     return (

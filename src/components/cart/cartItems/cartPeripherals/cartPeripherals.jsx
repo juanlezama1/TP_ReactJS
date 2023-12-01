@@ -20,7 +20,7 @@ const CartPeripherals = () => {
                 <h2 className="items_title2 text-center">Tus Accesorios:</h2>
 
                 {peripherals_cart.map((peripheral, peripheral_index) => (
-                    <div className='row peripheral_item'>
+                    <div key={peripheral_index} className='row peripheral_item'>
                         <div className="col-3 d-flex align-items-center">
                             <img className='peripheral_cart_image' src={peripheral.item_image} alt="peripheral_image" />
                         </div>

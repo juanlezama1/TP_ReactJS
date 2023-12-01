@@ -9,10 +9,3 @@
     font-weight: 400;
     font-style: italic;
 }
-
-@font-face {
-    font-family: 'font_cart';
-    src: url('./cartFont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}

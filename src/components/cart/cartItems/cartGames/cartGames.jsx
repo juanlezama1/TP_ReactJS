@@ -20,7 +20,7 @@ const CartGames = () => {
                 <h2 className="items_title text-center">Tus Videojuegos:</h2>
  
                 {games_cart.map((game, game_index) => (
-                    <div className='row game_item'>
+                    <div key={game_index} className='row game_item'>
                         <div className="col-3 d-flex align-items-center">
                             <img className='game_cart_image' src={game.item_image} alt="game_image" />
                         </div>
