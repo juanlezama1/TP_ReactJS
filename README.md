@@ -59,4 +59,6 @@ Sin embargo, si selecciono 2 licencias, las agrego al carrito, y luego quiero ag
 Es decir, tendría que poner 2 (agregar al carrito) -> 3 -> 2 (agregar al carrito)
 Si presiono 2 veces el mismo número el segundo me da como si estuviera poniendo un cero. No llegué a depurar ese caso puntual.
 
+- Por una cuestión de tiempo no llegué a comentar/emprolijar todos los componentes.
+Planeo hacerlo ya que la página me puede servir como portfolio a futuro.
 ## Espero que les guste, saludos!
